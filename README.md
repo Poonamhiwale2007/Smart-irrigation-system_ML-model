@@ -1,1 +1,76 @@
 # Smart-irrigation-system_ML-model
+# Smart Irrigation Prediction & Analytics Dashboard
+
+## Overview
+This project is a machine learning-based Smart Irrigation System that predicts irrigation water requirements using environmental and crop-related parameters. The application is developed using Python, Scikit-learn, and Streamlit.
+
+## Features
+* Predict irrigation water requirement.
+* Interactive dashboard using Streamlit.
+* Data visualization using Plotly.
+* Machine learning model based on Random Forest.
+* Crop-wise irrigation analysis.
+
+## Technologies Used
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Streamlit
+* Plotly
+* Joblib
+
+## Dataset
+The dataset contains information about:
+
+* Crop Type
+* Soil Type
+* Weather Conditions
+* Temperature
+* Humidity
+* Soil Moisture
+* Irrigation Water Requirement
+
+  ## Dataset Summary
+
+| Feature                    | Description                        | Role in Model                                     |
+| -------------------------- | ---------------------------------- | ------------------------------------------------- |
+| crop_type                  | Type of crop grown                 | Input feature used to estimate water needs        |
+| soil_type                  | Soil composition type              | Input feature affecting water retention           |
+| area_sqm                   | Field area (m²)                    | Input feature influencing total water requirement |
+| current_moisture_pct       | Current soil moisture (%)          | Key input feature for irrigation prediction       |
+| temperature_c              | Ambient temperature (°C)           | Input feature affecting evaporation rate          |
+| humidity_pct               | Relative humidity (%)              | Input feature influencing moisture loss           |
+| rainfall_mm                | Rainfall in the last 24 hours (mm) | Input feature reducing irrigation demand          |
+| wind_speed_kmh             | Wind speed (km/h)                  | Input feature affecting evaporation               |
+| days_since_last_irrigation | Days since previous irrigation     | Input feature indicating moisture depletion       |
+| weather_condition          | Current weather condition          | Input feature for environmental context           |
+| recommended_water_mm       | Recommended irrigation water (mm)  | Target variable predicted by the model            |
+
+### Target Variable
+The model predicts **recommended_water_mm**, which represents the amount of water required for efficient irrigation.
+
+
+## Model
+A Random Forest model was trained to predict irrigation requirements based on sensor and environmental data.
+
+## Why Random Forest Regression?
+We chose Random Forest Regression because it gives accurate predictions and can handle multiple factors like soil moisture, temperature, humidity, crop type, and weather conditions at the same time. It also works well with real-world data and helps reduce prediction errors.
+
+Model Performance
+├─ R² Score: 0.9977
+├─ MAE: 0.3259 mm
+├─ RMSE: 0.5722 mm
+
+## How to Run
+1. Clone the repository.
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run the application:
+   streamlit run app.py
+
+## Future Improvements
+* IoT sensor integration.
+* Real-time weather API integration.
+* Mobile application support.
+* Automated irrigation control.
